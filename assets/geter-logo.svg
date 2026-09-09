@@ -1,0 +1,13 @@
+<svg width="520" height="520" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+  <title>GETER S.A. de C.V.</title>
+  <g>
+    <path d="M160 70L360 70L468 178V342L360 450H160L52 342V178L160 70Z" fill="#071E33"/>
+
+    <path d="M140 110H270L362 202V296H286V220H206V352H270V420H140V110Z" fill="#0B2F5B"/>
+    <path d="M238 132H344L390 178V248H324V206H260V332H344V392H238V132Z" fill="#165DAB"/>
+    <path d="M180 172H292V268H228V338H312V394H180V172Z" fill="#D72638"/>
+    <path d="M304 176H402V248H348V212H304V176Z" fill="#D72638"/>
+    <path d="M176 214H252V356H176V214Z" fill="#071E33" opacity="0.4"/>
+    <path d="M304 264H352V356H304V264Z" fill="#071E33" opacity="0.4"/>
+  </g>
+</svg>

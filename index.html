@@ -5,170 +5,295 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Consultoría en estudios ambientales, seguridad e higiene para empresas e industria."
+      content="Servicios de ingeniería, inspección, seguridad e higiene y pruebas de laboratorio para el cumplimiento normativo de centros de trabajo."
     />
-    <title>Ambienta | Consultoría Ambiental y Seguridad e Higiene</title>
+    <meta property="og:title" content="GETER | Ingeniería, Inspección y Laboratorio de Pruebas" />
+    <meta
+      property="og:description"
+      content="Servicios de ingeniería, inspección, seguridad e higiene y pruebas de laboratorio para el cumplimiento normativo de centros de trabajo."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/geter-icon.svg" />
+    <title>GETER | Ingeniería, Inspección y Laboratorio de Pruebas</title>
+    <link rel="icon" type="image/svg+xml" href="assets/geter-icon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "GETER S.A. de C.V.",
+        "description": "Servicios de ingeniería, inspección, seguridad e higiene y pruebas de laboratorio para el cumplimiento normativo de centros de trabajo.",
+        "areaServed": "Mexico",
+        "telephone": "+52 (000) 000 0000",
+        "email": "contacto@geter.mx",
+        "url": "https://www.geter.mx",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "MX",
+          "addressLocality": "Ciudad de México"
+        }
+      }
+    </script>
   </head>
   <body>
-    <header class="hero">
-      <nav class="topbar container">
-        <a class="brand" href="#inicio" aria-label="Ambienta inicio">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-text">Ambienta</span>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#inicio" aria-label="GETER inicio">
+          <img src="assets/geter-icon.svg" alt="Ícono de GETER S.A. de C.V." class="brand-logo" />
         </a>
-        <a class="btn btn-sm" href="#contacto">Agenda una asesoría</a>
-      </nav>
 
-      <section id="inicio" class="hero-content container reveal">
-        <p class="eyebrow">Estudios ambientales + Seguridad e higiene</p>
-        <h1>Convertimos cumplimiento normativo en confianza operativa</h1>
-        <p class="lead">
-          Acompañamos a empresas, plantas y desarrollos en la gestión ambiental y la prevención de riesgos laborales con soluciones técnicas, claras y accionables.
-        </p>
-        <div class="hero-actions">
-          <a class="btn" href="#servicios">Ver servicios</a>
-          <a class="link-action" href="#metodologia">Cómo trabajamos</a>
-        </div>
-      </section>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-      <div class="hero-orb orb-one" aria-hidden="true"></div>
-      <div class="hero-orb orb-two" aria-hidden="true"></div>
+        <nav class="main-nav" id="site-nav" aria-label="Navegación principal">
+          <ul class="nav-list" id="nav-list"></ul>
+          <a class="btn btn-primary btn-nav" href="#contacto">Solicitar cotización</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section id="servicios" class="section container reveal">
-        <div class="section-title-wrap">
-          <p class="eyebrow">Servicios clave</p>
-          <h2>Consultoría integral para industria y comercio</h2>
-        </div>
-
-        <div class="services-grid">
-          <article class="card stagger">
-            <h3>Estudios ambientales</h3>
-            <p>
-              Evaluaciones de impacto, diagnósticos ambientales, líneas base y cumplimiento para permisos y operación continua.
+      <section id="inicio" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Ingeniería · Inspección · Laboratorio</p>
+            <h1>Ingeniería, inspección y pruebas para entornos más seguros</h1>
+            <p class="lead">
+              Soluciones técnicas para el cumplimiento normativo, la seguridad industrial y la evaluación de las condiciones de los centros de trabajo.
             </p>
-            <ul>
-              <li>Manifestaciones y reportes técnicos</li>
-              <li>Gestión de residuos y emisiones</li>
-              <li>Planes de mitigación y monitoreo</li>
-            </ul>
-          </article>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contacto">Solicitar cotización</a>
+              <a class="btn btn-secondary" href="#servicios">Conocer servicios</a>
+            </div>
 
-          <article class="card stagger">
-            <h3>Seguridad e higiene</h3>
-            <p>
-              Diseño de programas de prevención y control con base en normativa vigente y condiciones reales de campo.
-            </p>
-            <ul>
-              <li>Análisis de riesgos por proceso</li>
-              <li>Investigación de incidentes</li>
-              <li>Capacitación y cultura preventiva</li>
-            </ul>
-          </article>
+            <div class="tag-list" aria-label="Áreas de especialidad">
+              <span>INGENIERÍA</span>
+              <span>INSPECCIÓN</span>
+              <span>LABORATORIO</span>
+              <span>CUMPLIMIENTO</span>
+            </div>
+          </div>
 
-          <article class="card stagger">
-            <h3>Auditoría y cumplimiento</h3>
-            <p>
-              Revisión documental y operativa para fortalecer inspecciones, certificaciones y toma de decisiones directivas.
-            </p>
-            <ul>
-              <li>Auditorías internas y externas</li>
-              <li>Matriz legal aplicable</li>
-              <li>Planes de mejora con indicadores</li>
-            </ul>
-          </article>
+          <div class="hero-visual reveal" aria-label="Visual industrial de GETER">
+            <div class="visual-panel">
+              <div class="visual-bg-lines" aria-hidden="true"></div>
+              <img src="assets/geter-icon.svg" alt="Ícono oficial de GETER" class="hero-logo" />
+              <div class="visual-badges">
+                <div>
+                  <strong>+25</strong>
+                  <span>años de experiencia</span>
+                </div>
+                <div>
+                  <strong>Normas</strong>
+                  <span>aplicables y vigentes</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="metodologia" class="section section-alt reveal">
+      <section id="nosotros" class="section presentation">
         <div class="container">
-          <div class="section-title-wrap narrow">
-            <p class="eyebrow">Metodología</p>
-            <h2>Diagnóstico, acción y seguimiento medible</h2>
+          <div class="section-heading reveal">
+            <p class="eyebrow eyebrow-dark">Soluciones técnicas</p>
+            <h2>Soluciones técnicas que generan confianza</h2>
           </div>
-          <div class="steps">
-            <div class="step stagger">
-              <span>01</span>
-              <h3>Levantamiento en sitio</h3>
-              <p>Recabamos evidencia técnica, operativa y normativa para entender el contexto completo.</p>
-            </div>
-            <div class="step stagger">
-              <span>02</span>
-              <h3>Estrategia a la medida</h3>
-              <p>Definimos un plan claro con prioridades, costos estimados y responsables por etapa.</p>
-            </div>
-            <div class="step stagger">
-              <span>03</span>
-              <h3>Implementación acompañada</h3>
-              <p>Capacitamos equipos y damos seguimiento para que cada acción se sostenga en el tiempo.</p>
-            </div>
-          </div>
+
+          <p class="section-intro reveal">
+            En GETER brindamos servicios especializados de ingeniería, inspección y pruebas orientados a evaluar las condiciones de seguridad e higiene de los centros de trabajo y apoyar a las organizaciones en el cumplimiento de la normatividad aplicable.
+          </p>
+
+          <div class="pillar-grid" id="pillar-grid"></div>
         </div>
       </section>
 
-      <section class="section container reveal">
-        <div class="highlight">
+      <section id="servicios" class="section services-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow eyebrow-dark">Servicios</p>
+            <h2>Nuestros servicios</h2>
+          </div>
+
+          <div class="services-grid" id="services-grid"></div>
+        </div>
+      </section>
+
+      <section id="normatividad" class="section standards-section">
+        <div class="container standards-shell reveal">
+          <div class="section-heading section-heading-light">
+            <p class="eyebrow eyebrow-light">Cumplimiento normativo</p>
+            <h2>Cumplimiento normativo</h2>
+          </div>
+          <p class="standards-copy">
+            Evaluaciones técnicas realizadas con base en las Normas Oficiales Mexicanas aplicables a las condiciones de seguridad e higiene en los centros de trabajo.
+          </p>
+
+          <div class="standards-grid" id="standards-grid"></div>
+        </div>
+      </section>
+
+      <section class="section process-section" aria-labelledby="process-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow eyebrow-dark">Proceso</p>
+            <h2 id="process-title">De la evaluación a los resultados</h2>
+          </div>
+
+          <div class="process-timeline" id="process-timeline"></div>
+        </div>
+      </section>
+
+      <section class="section benefits-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow eyebrow-dark">Por qué GETER</p>
+            <h2>Precisión técnica. Resultados confiables.</h2>
+          </div>
+
+          <div class="benefits-grid" id="benefits-grid"></div>
+        </div>
+      </section>
+
+      <section id="sectores" class="section industries-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow eyebrow-dark">Sectores</p>
+            <h2>Soluciones para diferentes sectores</h2>
+          </div>
+
+          <div class="industries-grid" id="industries-grid"></div>
+        </div>
+      </section>
+
+      <section class="section dark-cta-section">
+        <div class="container cta-shell reveal">
           <div>
-            <p class="eyebrow">¿Por qué Ambienta?</p>
-            <h2>Habla técnica para especialistas y lenguaje claro para dirección</h2>
+            <p class="eyebrow eyebrow-light">Cotización</p>
+            <h2>¿Necesitas realizar un estudio o evaluación?</h2>
           </div>
           <p>
-            Nuestro enfoque conecta campo, cumplimiento y resultados de negocio para que tu operación avance segura, ordenada y alineada a la normativa.
+            Cuéntanos las necesidades de tu empresa y nuestro equipo podrá orientarte sobre el servicio adecuado.
           </p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="#contacto">Solicitar cotización</a>
+            <a class="btn btn-secondary btn-secondary-light" href="#contacto">Hablar con un especialista</a>
+          </div>
         </div>
       </section>
 
-      <section id="contacto" class="section container reveal">
-        <div class="contact-shell">
-          <div>
-            <p class="eyebrow">Contacto</p>
-            <h2>Solicita una evaluación inicial</h2>
+      <section id="contacto" class="section contact-section">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow eyebrow-dark">Contacto</p>
+            <h2>Cuéntanos tu necesidad</h2>
             <p>
-              Cuéntanos tu reto y te proponemos una ruta de trabajo en menos de 48 horas hábiles.
+              Nuestro equipo revisará la solicitud y te orientará sobre el servicio más apropiado para tu operación.
             </p>
-            <div class="contact-meta">
-              <p><strong>Correo:</strong> contacto@ambienta.mx</p>
-              <p><strong>Teléfono:</strong> +52 55 0000 0000</p>
-            </div>
+            <ul class="contact-details">
+              <li><strong>Teléfono:</strong> <a href="tel:+520000000000">+52 (000) 000 0000</a></li>
+              <li><strong>Correo:</strong> <a href="mailto:contacto@geter.mx">contacto@geter.mx</a></li>
+              <li><strong>Ubicación:</strong> Ciudad de México, México</li>
+            </ul>
           </div>
 
-          <form class="contact-form" action="#" method="post">
-            <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+          <form id="contact-form" class="contact-form reveal" novalidate>
+            <div class="field-row">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
 
-            <label for="empresa">Empresa</label>
-            <input id="empresa" name="empresa" type="text" placeholder="Nombre de la empresa" required />
+            <div class="field-row">
+              <label for="company">Empresa</label>
+              <input id="company" name="company" type="text" autocomplete="organization" required />
+            </div>
 
-            <label for="mensaje">Mensaje</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              rows="4"
-              placeholder="¿Qué necesitas resolver?"
-              required
-            ></textarea>
+            <div class="field-row split-row">
+              <div>
+                <label for="phone">Teléfono</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+              <div>
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+            </div>
 
-            <button class="btn" type="submit">Enviar solicitud</button>
+            <div class="field-row">
+              <label for="service">Servicio requerido</label>
+              <select id="service" name="service" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Agentes químicos contaminantes">Agentes químicos contaminantes</option>
+                <option value="Ruido laboral">Ruido laboral</option>
+                <option value="Recipientes sujetos a presión">Recipientes sujetos a presión</option>
+                <option value="Electricidad estática y tierras físicas">Electricidad estática y tierras físicas</option>
+                <option value="Iluminación">Iluminación</option>
+                <option value="Otro servicio">Otro servicio</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <label class="checkbox-row" for="privacy">
+              <input id="privacy" name="privacy" type="checkbox" required />
+              <span>Acepto el aviso de privacidad</span>
+            </label>
+
+            <button class="btn btn-primary submit-btn" type="submit">Enviar solicitud</button>
+            <div class="form-status" id="form-status" aria-live="polite"></div>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer-inner">
-        <p>© 2026 Ambienta Consultoría.</p>
-        <a href="#inicio" class="link-action">Volver arriba</a>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img src="assets/geter-icon.svg" alt="Ícono oficial de GETER" class="footer-logo" />
+          <p class="footer-company">GETER S.A. de C.V.</p>
+          <p class="footer-tagline">Ingeniería · Inspección · Laboratorio</p>
+        </div>
+
+        <div>
+          <h3>Navegación</h3>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#normatividad">Normatividad</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Información</h3>
+          <ul class="footer-contact">
+            <li><a href="tel:+520000000000">Teléfono</a></li>
+            <li><a href="mailto:contacto@geter.mx">Correo</a></li>
+            <li><span>Ubicación</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <a href="#">Aviso de privacidad</a>
+        <span>© GETER S.A. de C.V.</span>
       </div>
     </footer>
 
+    <script src="data/site-data.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
