@@ -776,6 +776,282 @@ textarea:focus {
   color: #b4232d;
 }
 
+.quote-admin-section {
+  display: none;
+  padding: 5rem 0;
+  background: var(--soft-gray);
+}
+
+body.quote-admin-visible .quote-admin-section {
+  display: block;
+}
+
+.quote-admin-header,
+.quote-section-heading,
+.quote-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.quote-admin-header {
+  margin-bottom: 2rem;
+}
+
+.quote-admin-header h2 {
+  margin-bottom: 0.6rem;
+}
+
+.quote-admin-header p:last-child {
+  margin: 0;
+  color: rgba(7, 30, 51, 0.7);
+}
+
+.quote-builder-form {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line-color);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.quote-form-section {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.quote-form-section h3 {
+  font-size: 1.05rem;
+}
+
+.quote-fields {
+  display: grid;
+  gap: 1rem;
+}
+
+.quote-fields-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.quote-fields-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.quote-field-wide {
+  grid-column: 1 / -1;
+}
+
+.btn-small {
+  padding: 0.7rem 1rem;
+  font-size: 0.85rem;
+}
+
+.quote-items-head,
+.quote-item-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 2fr) 110px 100px 140px 130px 42px;
+  gap: 0.6rem;
+  align-items: end;
+}
+
+.quote-items-head {
+  padding: 0 0.8rem;
+  color: rgba(7, 30, 51, 0.62);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+#quote-items {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.quote-item-row {
+  align-items: center;
+}
+
+.quote-item-row input {
+  min-width: 0;
+}
+
+.quote-item-total {
+  padding: 0.8rem 0.4rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  text-align: right;
+}
+
+.remove-quote-item {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(215, 38, 56, 0.22);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--accent-red);
+  cursor: pointer;
+  font-size: 1.15rem;
+}
+
+.quote-preview {
+  display: none;
+  margin-top: 2rem;
+  background: var(--white);
+}
+
+.quote-preview.is-visible {
+  display: block;
+}
+
+.quote-print-sheet {
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 14mm 13mm;
+  color: #111;
+  background: var(--white);
+  font-family: Arial, sans-serif;
+}
+
+.quote-print-header {
+  display: grid;
+  grid-template-columns: 0.9fr 1.6fr 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #314a80;
+}
+
+.quote-print-logo {
+  width: 70px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.quote-print-header h1 {
+  margin: 0;
+  color: #314a80;
+  font: 700 24px Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+.quote-print-header p,
+.quote-print-meta p,
+.quote-print-company p {
+  margin: 0.15rem 0;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.quote-print-company strong,
+.quote-print-meta strong {
+  display: block;
+  color: #777;
+  font-size: 10px;
+}
+
+.quote-print-meta {
+  border: 1px solid #aaa;
+  padding: 0.5rem;
+}
+
+.quote-print-band {
+  margin: 1rem 0 0.45rem;
+  padding: 0.28rem 0.55rem;
+  background: #314a80;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.quote-print-sheet > p,
+.quote-print-notes li,
+.quote-print-conditions li {
+  font-size: 10.5px;
+  line-height: 1.35;
+}
+
+.quote-print-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9px;
+}
+
+.quote-print-table th {
+  background: #314a80;
+  color: var(--white);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.quote-print-table th,
+.quote-print-table td {
+  padding: 0.35rem;
+  border: 1px solid #111;
+  vertical-align: top;
+}
+
+.quote-print-table td:nth-child(n + 3),
+.quote-print-table th:nth-child(n + 3) {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.quote-print-totals {
+  width: 42%;
+  margin: 0.75rem 0 0 auto;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+.quote-print-totals td {
+  padding: 0.25rem 0.4rem;
+  border-bottom: 1px solid #aaa;
+  text-align: right;
+}
+
+.quote-print-totals td:first-child {
+  font-weight: 700;
+}
+
+.quote-print-totals tr:last-child {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.quote-print-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.quote-print-notes,
+.quote-print-conditions {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.quote-signatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 10px;
+}
+
+.quote-signatures div {
+  padding-top: 2rem;
+  border-top: 1px solid #222;
+}
+
 .site-footer {
   background: #f3f6fb;
   border-top: 1px solid var(--line-color);
@@ -925,6 +1201,31 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
+  .quote-fields-2,
+  .quote-fields-3,
+  .quote-print-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-items-head {
+    display: none;
+  }
+
+  .quote-item-row {
+    grid-template-columns: 1fr 1fr;
+    padding: 0.75rem;
+    border: 1px solid var(--line-color);
+    border-radius: 12px;
+  }
+
+  .quote-item-row input:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .quote-item-total {
+    text-align: left;
+  }
+
   .process-timeline::before {
     display: none;
   }
@@ -973,6 +1274,63 @@ textarea:focus {
   .tag-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quote-admin-header,
+  .quote-section-heading,
+  .quote-form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: var(--white);
+  }
+
+  body.quote-printing > header,
+  body.quote-printing > footer,
+  body.quote-printing main > section:not(#cotizador),
+  body.quote-printing #cotizador > .container > *:not(#quote-preview) {
+    display: none !important;
+  }
+
+  body.quote-printing main,
+  body.quote-printing #cotizador,
+  body.quote-printing #cotizador > .container,
+  body.quote-printing #quote-preview {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  body.quote-printing #quote-preview * {
+    visibility: visible !important;
+  }
+
+  body.quote-printing #cotizador {
+    padding: 0 !important;
+  }
+
+  body.quote-printing #cotizador > .container {
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  body.quote-printing #quote-preview {
+    position: static;
+    margin: 0 !important;
+  }
+
+  .quote-print-sheet {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 14mm 13mm;
   }
 }
   opacity: 0;

@@ -30,7 +30,7 @@
         "name": "GETER S.A. de C.V.",
         "description": "Servicios de ingeniería, inspección, seguridad e higiene y pruebas de laboratorio para el cumplimiento normativo de centros de trabajo.",
         "areaServed": "Mexico",
-        "telephone": "+52 (000) 000 0000",
+        "telephone": "+52 221 182 3392",
         "email": "contacto@geter.mx",
         "url": "https://www.geter.mx",
         "address": {
@@ -200,7 +200,7 @@
               Nuestro equipo revisará la solicitud y te orientará sobre el servicio más apropiado para tu operación.
             </p>
             <ul class="contact-details">
-              <li><strong>Teléfono:</strong> <a href="tel:+520000000000">+52 (000) 000 0000</a></li>
+              <li><strong>WhatsApp:</strong> <a href="https://wa.me/522211823392" target="_blank" rel="noopener">+52 221 182 3392</a></li>
               <li><strong>Correo:</strong> <a href="mailto:contacto@geter.mx">contacto@geter.mx</a></li>
               <li><strong>Ubicación:</strong> Ciudad de México, México</li>
             </ul>
@@ -256,6 +256,65 @@
           </form>
         </div>
       </section>
+
+      <section id="cotizador" class="quote-admin-section" aria-labelledby="quote-builder-title">
+        <div class="container">
+          <div class="quote-admin-header">
+            <div>
+              <p class="eyebrow eyebrow-dark">Área privada</p>
+              <h2 id="quote-builder-title">Generador de cotizaciones</h2>
+              <p>Captura los datos y genera un documento listo para guardar como PDF.</p>
+            </div>
+            <a class="btn btn-secondary" href="#inicio">Volver al sitio</a>
+          </div>
+
+          <form id="quote-form" class="quote-builder-form">
+            <div class="quote-form-section">
+              <h3>Datos de la cotización</h3>
+              <div class="quote-fields quote-fields-3">
+                <div class="field-row"><label for="quote-folio">Folio</label><input id="quote-folio" name="folio" value="COT-GETER-001" required /></div>
+                <div class="field-row"><label for="quote-date">Fecha</label><input id="quote-date" name="date" type="date" required /></div>
+                <div class="field-row"><label for="quote-validity">Vigencia</label><input id="quote-validity" name="validity" value="90 días hábiles" /></div>
+              </div>
+            </div>
+
+            <div class="quote-form-section">
+              <h3>Cliente</h3>
+              <div class="quote-fields quote-fields-2">
+                <div class="field-row"><label for="quote-company">Nombre o razón social</label><input id="quote-company" name="company" required /></div>
+                <div class="field-row"><label for="quote-representative">Representante</label><input id="quote-representative" name="representative" /></div>
+                <div class="field-row"><label for="quote-address">Dirección</label><input id="quote-address" name="address" /></div>
+                <div class="field-row"><label for="quote-attention">A quién va dirigida</label><input id="quote-attention" name="attention" /></div>
+              </div>
+            </div>
+
+            <div class="quote-form-section">
+              <div class="quote-section-heading">
+                <h3>Servicios cotizados</h3>
+                <button class="btn btn-secondary btn-small" id="add-quote-item" type="button">+ Agregar servicio</button>
+              </div>
+              <div class="quote-items-head"><span>Descripción</span><span>Unidad</span><span>Cantidad</span><span>Precio unitario</span><span>Total</span><span></span></div>
+              <div id="quote-items"></div>
+            </div>
+
+            <div class="quote-form-section">
+              <h3>Condiciones y notas</h3>
+              <div class="quote-fields quote-fields-2">
+                <div class="field-row"><label for="quote-payment">Condiciones de pago</label><input id="quote-payment" name="payment" value="50% anticipo - resto contra entrega. Pagos inmediatos." /></div>
+                <div class="field-row"><label for="quote-delivery">Tiempo de entrega</label><input id="quote-delivery" name="delivery" value="20 días hábiles" /></div>
+                <div class="field-row quote-field-wide"><label for="quote-notes">Notas u observaciones</label><textarea id="quote-notes" name="notes" rows="4">El cliente deberá proporcionar la información documental necesaria para realizar los estudios pertinentes.</textarea></div>
+              </div>
+            </div>
+
+            <div class="quote-form-actions">
+              <button class="btn btn-primary" type="submit">Generar cotización y PDF</button>
+              <span id="quote-form-status" class="form-status" aria-live="polite"></span>
+            </div>
+          </form>
+
+          <article id="quote-preview" class="quote-preview" aria-live="polite"></article>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -280,7 +339,7 @@
         <div>
           <h3>Información</h3>
           <ul class="footer-contact">
-            <li><a href="tel:+520000000000">Teléfono</a></li>
+            <li><a href="https://wa.me/522211823392" target="_blank" rel="noopener">WhatsApp</a></li>
             <li><a href="mailto:contacto@geter.mx">Correo</a></li>
             <li><span>Ubicación</span></li>
           </ul>

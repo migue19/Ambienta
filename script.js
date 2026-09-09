@@ -208,9 +208,172 @@ const initContactForm = () => {
   });
 };
 
+const escapeHtml = (value) =>
+  String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
+const formatCurrency = (value) =>
+  new Intl.NumberFormat('es-MX', {
+    style: 'currency',
+    currency: 'MXN',
+    minimumFractionDigits: 2
+  }).format(Number(value) || 0);
+
+const addQuoteItem = (values = {}) => {
+  const items = document.getElementById('quote-items');
+  if (!items) return;
+
+  const row = document.createElement('div');
+  row.className = 'quote-item-row';
+  row.innerHTML = `
+    <input class="quote-item-description" type="text" placeholder="Descripción del servicio" value="${escapeHtml(values.description || '')}" required />
+    <input class="quote-item-unit" type="text" placeholder="Unidad" value="${escapeHtml(values.unit || 'PUNTO')}" required />
+    <input class="quote-item-quantity" type="number" min="0" step="any" placeholder="0" value="${escapeHtml(values.quantity || 1)}" required />
+    <input class="quote-item-price" type="number" min="0" step="0.01" placeholder="0.00" value="${escapeHtml(values.price || 0)}" required />
+    <output class="quote-item-total">${formatCurrency(0)}</output>
+    <button class="remove-quote-item" type="button" aria-label="Eliminar servicio">×</button>
+  `;
+
+  const updateRowTotal = () => {
+    const quantity = Number(row.querySelector('.quote-item-quantity').value) || 0;
+    const price = Number(row.querySelector('.quote-item-price').value) || 0;
+    row.querySelector('.quote-item-total').textContent = formatCurrency(quantity * price);
+  };
+
+  row.querySelectorAll('input').forEach((input) => input.addEventListener('input', updateRowTotal));
+  row.querySelector('.remove-quote-item').addEventListener('click', () => {
+    if (items.children.length > 1) row.remove();
+    else row.querySelectorAll('input').forEach((input) => { input.value = ''; });
+  });
+  items.appendChild(row);
+  updateRowTotal();
+};
+
+const initQuoteBuilder = () => {
+  const form = document.getElementById('quote-form');
+  const adminSection = document.getElementById('cotizador');
+  const items = document.getElementById('quote-items');
+  const addButton = document.getElementById('add-quote-item');
+  const preview = document.getElementById('quote-preview');
+  const status = document.getElementById('quote-form-status');
+
+  if (!form || !adminSection || !items || !addButton || !preview || !status) return;
+
+  const syncPrivateView = () => {
+    const isPrivateView = window.location.hash === '#cotizador';
+    document.body.classList.toggle('quote-admin-visible', isPrivateView);
+    if (isPrivateView) adminSection.scrollIntoView({ block: 'start' });
+  };
+
+  document.getElementById('quote-date').value = new Date().toISOString().slice(0, 10);
+  addQuoteItem({ description: 'Reconocimiento y evaluación NOM-010-STPS-2014', unit: 'SUSTANCIA' });
+  addButton.addEventListener('click', () => addQuoteItem());
+  window.addEventListener('hashchange', syncPrivateView);
+  syncPrivateView();
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      status.className = 'form-status error';
+      status.textContent = 'Completa los campos obligatorios antes de generar la cotización.';
+      return;
+    }
+
+    const getValue = (id) => document.getElementById(id).value.trim();
+    const rows = [...items.querySelectorAll('.quote-item-row')].map((row) => {
+      const quantity = Number(row.querySelector('.quote-item-quantity').value) || 0;
+      const price = Number(row.querySelector('.quote-item-price').value) || 0;
+      return {
+        description: row.querySelector('.quote-item-description').value.trim(),
+        unit: row.querySelector('.quote-item-unit').value.trim(),
+        quantity,
+        price,
+        total: quantity * price
+      };
+    });
+
+    const subtotal = rows.reduce((sum, row) => sum + row.total, 0);
+    const tax = subtotal * 0.16;
+    const total = subtotal + tax;
+    const date = new Date(`${getValue('quote-date')}T12:00:00`).toLocaleDateString('es-MX');
+
+    preview.innerHTML = `
+      <div class="quote-print-sheet">
+        <header class="quote-print-header">
+          <img class="quote-print-logo" src="assets/geter-icon-256.png" alt="Ícono de GETER" />
+          <div class="quote-print-company">
+            <h1>GETER S.A. de C.V.</h1>
+            <p>Ingeniería · Inspección · Laboratorio</p>
+            <p>Servicios técnicos para el cumplimiento normativo</p>
+          </div>
+          <div class="quote-print-meta">
+            <p><strong>Folio</strong>${escapeHtml(getValue('quote-folio'))}</p>
+            <p><strong>Fecha</strong>${escapeHtml(date)}</p>
+            <p><strong>Vigencia</strong>${escapeHtml(getValue('quote-validity'))}</p>
+          </div>
+        </header>
+
+        <div class="quote-print-band">Datos del cliente</div>
+        <div class="quote-print-columns">
+          <div class="quote-print-company"><p><strong>Nombre de la empresa</strong>${escapeHtml(getValue('quote-company'))}</p><p><strong>Dirección</strong>${escapeHtml(getValue('quote-address'))}</p></div>
+          <div class="quote-print-company"><p><strong>Representante</strong>${escapeHtml(getValue('quote-representative'))}</p><p><strong>A quién va dirigida</strong>${escapeHtml(getValue('quote-attention'))}</p></div>
+        </div>
+
+        <div class="quote-print-band">Propuesta técnico-económica</div>
+        <table class="quote-print-table">
+          <thead><tr><th>No.</th><th>Descripción</th><th>Unidad</th><th>Cantidad</th><th>Precio/U</th><th>Total</th></tr></thead>
+          <tbody>${rows.map((row, index) => `<tr><td>${index + 1}</td><td>${escapeHtml(row.description)}</td><td>${escapeHtml(row.unit)}</td><td>${row.quantity}</td><td>${formatCurrency(row.price)}</td><td>${formatCurrency(row.total)}</td></tr>`).join('')}</tbody>
+        </table>
+        <table class="quote-print-totals"><tbody>
+          <tr><td>Subtotal</td><td>${formatCurrency(subtotal)}</td></tr>
+          <tr><td>IVA 16%</td><td>${formatCurrency(tax)}</td></tr>
+          <tr><td>Total</td><td>${formatCurrency(total)}</td></tr>
+        </tbody></table>
+
+        <div class="quote-print-band">Condiciones generales</div>
+        <ul class="quote-print-conditions">
+          <li>Condiciones de pago: ${escapeHtml(getValue('quote-payment'))}</li>
+          <li>Tiempo de entrega: ${escapeHtml(getValue('quote-delivery'))}, previa entrega de la documentación solicitada y liberación de las áreas.</li>
+          <li>Los precios están expresados en moneda nacional e incluyen IVA.</li>
+          <li>Los servicios adicionales o alcances no especificados se cotizarán por separado.</li>
+        </ul>
+
+        <div class="quote-print-band">Notas</div>
+        <p>${escapeHtml(getValue('quote-notes')).replaceAll('\n', '<br />')}</p>
+        <div class="quote-signatures"><div>Representante de GETER</div><div>Aceptación del cliente</div></div>
+      </div>
+    `;
+
+    preview.classList.add('is-visible');
+    status.className = 'form-status success';
+    status.textContent = 'Cotización generada. Se abrirá el diálogo para guardarla como PDF.';
+
+    const previewImages = [...preview.querySelectorAll('img')];
+    await Promise.all(
+      previewImages.map((image) => {
+        if (image.complete && image.naturalWidth > 0) return Promise.resolve();
+        return new Promise((resolve) => {
+          image.addEventListener('load', resolve, { once: true });
+          image.addEventListener('error', resolve, { once: true });
+        });
+      })
+    );
+
+    document.body.classList.add('quote-printing');
+    window.requestAnimationFrame(() => window.print());
+    window.setTimeout(() => document.body.classList.remove('quote-printing'), 500);
+  });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   renderData();
   initRevealAnimations();
   initMobileNav();
   initContactForm();
+  initQuoteBuilder();
 });
