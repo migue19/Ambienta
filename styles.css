@@ -842,6 +842,11 @@ body.quote-admin-visible .quote-admin-section {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.quote-builder-form .quote-fields-2,
+.quote-builder-form .quote-fields-3 {
+  width: 100%;
+}
+
 .quote-field-wide {
   grid-column: 1 / -1;
 }
@@ -1201,8 +1206,6 @@ body.quote-admin-visible .quote-admin-section {
     grid-template-columns: 1fr;
   }
 
-  .quote-fields-2,
-  .quote-fields-3,
   .quote-print-columns {
     grid-template-columns: 1fr;
   }
@@ -1281,6 +1284,11 @@ body.quote-admin-visible .quote-admin-section {
   .quote-form-actions {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .quote-fields-2,
+  .quote-fields-3 {
+    grid-template-columns: 1fr;
   }
 }
 
