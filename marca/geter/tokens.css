@@ -1,0 +1,27 @@
+/* GETER · v1.0 · Tokens de referencia, aislados del sitio actual. */
+.geter-theme {
+  --geter-primary: #0B2F5B;
+  --geter-secondary: #165DAB;
+  --geter-accent: #D72638;
+  --geter-deep: #071E33;
+  --geter-text: #2E3238;
+  --geter-surface: #F3F5F7;
+  --geter-white: #FFFFFF;
+  --geter-font-heading: 'Montserrat', Arial, sans-serif;
+  --geter-font-body: 'Inter', Arial, sans-serif;
+  --geter-space-1: 4px;
+  --geter-space-2: 8px;
+  --geter-space-3: 12px;
+  --geter-space-4: 16px;
+  --geter-space-6: 24px;
+  --geter-space-8: 32px;
+  --geter-space-12: 48px;
+  --geter-space-16: 64px;
+  --geter-radius-sm: 12px;
+  --geter-radius-md: 16px;
+  --geter-radius-lg: 22px;
+  --geter-radius-xl: 28px;
+  --geter-container: 1200px;
+  --geter-control-min-height: 44px;
+  --geter-focus: 3px solid #165DAB;
+}

@@ -1,0 +1,34 @@
+{
+  "method": "sRGB relative luminance",
+  "scope": "Sólo combinaciones indicadas; no auditoría del sitio.",
+  "pairs": [
+    {
+      "foreground": "#0B2F5B",
+      "background": "#FFFFFF",
+      "label": "Azul / blanco",
+      "ratio": 13.359613668378028,
+      "passesNormalAA": true
+    },
+    {
+      "foreground": "#165DAB",
+      "background": "#FFFFFF",
+      "label": "Azul secundario / blanco",
+      "ratio": 6.58738840183064,
+      "passesNormalAA": true
+    },
+    {
+      "foreground": "#D72638",
+      "background": "#FFFFFF",
+      "label": "Rojo / blanco",
+      "ratio": 4.9718679450715655,
+      "passesNormalAA": true
+    },
+    {
+      "foreground": "#2E3238",
+      "background": "#F3F5F7",
+      "label": "Grafito / gris",
+      "ratio": 11.791847060748443,
+      "passesNormalAA": true
+    }
+  ]
+}

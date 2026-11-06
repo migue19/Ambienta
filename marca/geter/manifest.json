@@ -1,0 +1,11 @@
+{
+  "name": "GETER",
+  "version": "1.0",
+  "date": "2026-11-04",
+  "status": "Para revisión",
+  "design": "DESIGN.md",
+  "preview": "preview/brand.html",
+  "pdf": "../../entregables/geter-2026/Guia_diseno_GETER.pdf",
+  "artwork": "Raster original; no maestro vectorial",
+  "pages": 10
+}
